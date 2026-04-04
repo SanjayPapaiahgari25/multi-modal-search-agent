@@ -7,11 +7,11 @@ class TextEmbedder(BaseEmbedder):
     """
     Embedder for text using SentenceTransformer.
     """
-    def __init__(self):
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2") -> None:
         """
         Initialize the TextEmbedder.
         """
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.model = SentenceTransformer(model_name)
     
     def encode(self, texts: list[str]) -> np.ndarray:
         """
